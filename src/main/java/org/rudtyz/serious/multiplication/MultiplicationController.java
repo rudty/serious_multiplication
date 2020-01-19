@@ -1,11 +1,14 @@
 package org.rudtyz.serious.multiplication;
 
+import org.rudtyz.serious.multiplication.service.IntegerMultiplicationService;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MultiplicationController {
 
-    public String index(String lhs, String rhs) {
-        return "";
+    private IntegerMultiplicationService service;
+
+    public String index(int lhs, int rhs) {
+        return "result: " + service.multiplication(lhs, rhs);
     }
 }
