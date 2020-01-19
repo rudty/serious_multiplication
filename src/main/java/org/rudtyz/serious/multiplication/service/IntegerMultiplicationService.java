@@ -1,9 +1,7 @@
 package org.rudtyz.serious.multiplication.service;
 
-import org.rudtyz.serious.multiplication.service.factory.StringPrinter;
-import org.rudtyz.serious.multiplication.service.factory.StringPrinterFactory;
+import org.rudtyz.serious.multiplication.service.event.IntegerMultiplicationEvent;
 import org.rudtyz.serious.multiplication.service.strategies.MultiplicationStrategy;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
@@ -21,8 +19,8 @@ public class IntegerMultiplicationService {
 
     public int multiplication(int lhs, int rhs) {
         final int result = multiplicationStrategy.multiply(lhs, rhs);
-        multiplicationEventPublisher.publishEvent(new MultiplicationEvent(lhs, rhs, result));
+        multiplicationEventPublisher.publishEvent(
+                new IntegerMultiplicationEvent(lhs, rhs, result));
         return result;
     }
-
 }

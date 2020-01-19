@@ -1,5 +1,6 @@
 package org.rudtyz.serious.multiplication.service;
 
+import org.rudtyz.serious.multiplication.service.event.IntegerMultiplicationEvent;
 import org.rudtyz.serious.multiplication.service.factory.*;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ public class MultiplicationEventService {
     }
 
     @EventListener
-    public void onMultiplicationEventReceive(MultiplicationEvent event) {
+    public void onMultiplicationEventReceive(IntegerMultiplicationEvent event) {
         integerPrinter.print(event.getLhs());
         stringPrinter.print(" * ");
         integerPrinter.print(event.getRhs());
