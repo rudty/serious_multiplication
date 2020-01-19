@@ -8,11 +8,11 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MultiplicationService {
+public class IntegerMultiplicationService {
     private final MultiplicationStrategy<Integer, Integer, Integer> multiplicationStrategy;
     private final ApplicationEventPublisher multiplicationEventPublisher;
 
-    public MultiplicationService(
+    public IntegerMultiplicationService(
             ApplicationEventPublisher multiplicationEventPublisher,
             MultiplicationStrategy<Integer, Integer, Integer> multiplicationStrategy) {
         this.multiplicationEventPublisher = multiplicationEventPublisher;
@@ -21,7 +21,7 @@ public class MultiplicationService {
 
     public int multiplication(int lhs, int rhs) {
         final int result = multiplicationStrategy.multiply(lhs, rhs);
-        multiplicationEventPublisher.publishEvent(new MultiplicationEvent(lhs,rhs,result));
+        multiplicationEventPublisher.publishEvent(new MultiplicationEvent(lhs, rhs, result));
         return result;
     }
 

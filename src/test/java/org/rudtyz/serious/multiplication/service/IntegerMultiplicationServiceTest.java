@@ -11,10 +11,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @ExtendWith(OutputCaptureExtension.class)
-public class MultiplicationServiceTest {
+public class IntegerMultiplicationServiceTest {
 
     @Autowired
-    MultiplicationService multiplicationService;
+    IntegerMultiplicationService multiplicationService;
 
     @Test
     void testMultiplication_8_9(CapturedOutput output) {
