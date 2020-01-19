@@ -4,24 +4,25 @@ import org.rudtyz.serious.multiplication.service.factory.StringPrinter;
 import org.rudtyz.serious.multiplication.service.factory.StringPrinterFactory;
 import org.rudtyz.serious.multiplication.service.strategies.MultiplicationStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 @Service
 public class MultiplicationService {
-    private StringPrinter printer;
-
-    private MultiplicationStrategy<Integer, Integer, Integer> multiplicationStrategy;
+    private final MultiplicationStrategy<Integer, Integer, Integer> multiplicationStrategy;
+    private final ApplicationEventPublisher multiplicationEventPublisher;
 
     public MultiplicationService(
-            StringPrinterFactory factory,
+            ApplicationEventPublisher multiplicationEventPublisher,
             MultiplicationStrategy<Integer, Integer, Integer> multiplicationStrategy) {
-        this.printer = factory.create();
+        this.multiplicationEventPublisher = multiplicationEventPublisher;
         this.multiplicationStrategy = multiplicationStrategy;
     }
 
     public int multiplication(int lhs, int rhs) {
-        printer.print(lhs + " * " + rhs + " = " + (lhs * rhs));
-        return multiplicationStrategy.multiply(lhs, rhs);
+        final int result = multiplicationStrategy.multiply(lhs, rhs);
+        multiplicationEventPublisher.publishEvent(new MultiplicationEvent(lhs,rhs,result));
+        return result;
     }
 
 }
