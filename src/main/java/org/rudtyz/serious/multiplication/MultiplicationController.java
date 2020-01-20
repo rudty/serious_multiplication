@@ -1,6 +1,6 @@
 package org.rudtyz.serious.multiplication;
 
-import org.rudtyz.serious.multiplication.service.IntegerMultiplicationService;
+import org.rudtyz.serious.multiplication.service.business.IntegerMultiplicationService;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
