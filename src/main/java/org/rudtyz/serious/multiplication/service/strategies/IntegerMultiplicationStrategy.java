@@ -1,4 +1,4 @@
-package org.rudtyz.serious.multiplication.strategies;
+package org.rudtyz.serious.multiplication.service.strategies;
 
 
 import org.springframework.stereotype.Component;
