@@ -1,6 +1,5 @@
-package org.rudtyz.serious.multiplication.service;
+package org.rudtyz.serious.multiplication.service.support;
 
-import org.rudtyz.serious.multiplication.service.support.IntegerMultiplicationEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 

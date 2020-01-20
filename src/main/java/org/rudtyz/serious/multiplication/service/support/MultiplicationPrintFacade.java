@@ -1,6 +1,6 @@
-package org.rudtyz.serious.multiplication.service;
+package org.rudtyz.serious.multiplication.service.support;
 
-import org.rudtyz.serious.multiplication.service.factory.*;
+import org.rudtyz.serious.multiplication.factory.*;
 import org.springframework.stereotype.Component;
 
 @Component
