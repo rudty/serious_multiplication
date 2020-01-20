@@ -1,4 +1,4 @@
-package org.rudtyz.serious.multiplication.service;
+package org.rudtyz.serious.multiplication.service.business;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

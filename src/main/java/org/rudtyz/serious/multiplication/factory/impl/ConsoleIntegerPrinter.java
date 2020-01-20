@@ -1,6 +1,6 @@
-package org.rudtyz.serious.multiplication.service.factory.impl;
+package org.rudtyz.serious.multiplication.factory.impl;
 
-import org.rudtyz.serious.multiplication.service.factory.IntegerPrinter;
+import org.rudtyz.serious.multiplication.factory.IntegerPrinter;
 
 public class ConsoleIntegerPrinter implements IntegerPrinter {
     @Override

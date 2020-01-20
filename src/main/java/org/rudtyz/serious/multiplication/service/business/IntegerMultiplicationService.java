@@ -1,7 +1,6 @@
 package org.rudtyz.serious.multiplication.service.business;
 
-import org.rudtyz.serious.multiplication.service.strategies.MultiplicationStrategy;
-import org.springframework.context.ApplicationEventPublisher;
+import org.rudtyz.serious.multiplication.strategies.MultiplicationStrategy;
 import org.springframework.stereotype.Service;
 
 @Service

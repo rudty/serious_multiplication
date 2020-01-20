@@ -1,4 +1,4 @@
-package org.rudtyz.serious.multiplication.service.event;
+package org.rudtyz.serious.multiplication.service.support;
 
 import java.util.Objects;
 
