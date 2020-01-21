@@ -30,4 +30,15 @@ public class MultiplicationControllerTest {
                 .andExpect(content().string("81"))
                 .andDo(print());
     }
+
+    @Test
+    public void 결과_보기_2_1_2_1() throws Exception {
+        mockMvc.perform(get("/double")
+                .param("lhs", "2.1")
+                .param("rhs", "2.1"))
+                .andExpect(handler().methodName("doubleMultiplication"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("4.41"))
+                .andDo(print());
+    }
 }
