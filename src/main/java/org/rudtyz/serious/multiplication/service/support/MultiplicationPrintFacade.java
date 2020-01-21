@@ -6,24 +6,24 @@ import org.springframework.stereotype.Component;
 @Component
 public class MultiplicationPrintFacade {
     private final StringPrinter stringPrinter;
-    private final IntegerPrinter integerPrinter;
+    private final ObjectPrinter objectPrinter;
     private final NewLinePrinter newLinePrinter;
 
     public MultiplicationPrintFacade(
             StringPrinterFactory stringPrinterFactory,
-            IntegerPrinterFactory integerPrinterFactory,
+            ObjectPrinterFactory integerPrinterFactory,
             NewLinePrinterFactory newLinePrinterFactory) {
         this.stringPrinter = stringPrinterFactory.create();
-        this.integerPrinter = integerPrinterFactory.create();
+        this.objectPrinter = integerPrinterFactory.create();
         this.newLinePrinter = newLinePrinterFactory.create();
     }
 
-    public void print(int lhs, int rhs, int result) {
-        integerPrinter.print(lhs);
+    public void print(Object lhs, Object rhs, Object result) {
+        objectPrinter.print(lhs);
         stringPrinter.print(" * ");
-        integerPrinter.print(rhs);
+        objectPrinter.print(rhs);
         stringPrinter.print(" = ");
-        integerPrinter.print(result);
+        objectPrinter.print(result);
         newLinePrinter.print();
     }
 }
