@@ -20,7 +20,7 @@ public class MultiplicationProcessingAspect {
    @AfterReturning(
            value = "execution(* org.rudtyz.serious.multiplication.service.business.*.*(..))",
            returning = "returnValue")
-   public void e(JoinPoint joinPoint, Object returnValue) {
+   public void handleInteger(JoinPoint joinPoint, Object returnValue) {
       Object[] args = joinPoint.getArgs();
       multiplicationEventPublisher.publishEvent(
               new IntegerMultiplicationEvent(
