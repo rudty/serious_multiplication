@@ -3,7 +3,7 @@ package org.rudtyz.serious.multiplication.service.aop;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
-import org.rudtyz.serious.multiplication.service.support.IntegerMultiplicationEvent;
+import org.rudtyz.serious.multiplication.service.support.NumberMultiplicationEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
@@ -18,14 +18,14 @@ public class MultiplicationProcessingAspect {
    }
 
    @AfterReturning(
-           value = "execution(* org.rudtyz.serious.multiplication.service.business.*.*(..))",
+           value = "execution(* org.rudtyz.serious.multiplication.service.business.*.multiplication(..))",
            returning = "returnValue")
-   public void handleInteger(JoinPoint joinPoint, Object returnValue) {
+   public void handleNumber(JoinPoint joinPoint, Object returnValue) {
       Object[] args = joinPoint.getArgs();
       multiplicationEventPublisher.publishEvent(
-              new IntegerMultiplicationEvent(
-                      (Integer)args[0],
-                      (Integer)args[1],
-                      (Integer)returnValue));
+              new NumberMultiplicationEvent(
+                      (Number) args[0],
+                      (Number)args[1],
+                      (Number)returnValue));
    }
 }

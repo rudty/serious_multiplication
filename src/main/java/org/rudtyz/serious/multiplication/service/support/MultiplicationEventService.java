@@ -13,7 +13,7 @@ public class MultiplicationEventService {
     }
 
     @EventListener
-    public void onMultiplicationEventReceive(IntegerMultiplicationEvent event) {
+    public void onMultiplicationEventReceive(NumberMultiplicationEvent event) {
         multiplicationPrintFacade.print(event.getLhs(), event.getRhs(), event.getResult());
     }
 }
