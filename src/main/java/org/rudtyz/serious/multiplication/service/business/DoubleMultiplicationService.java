@@ -4,17 +4,11 @@ import org.rudtyz.serious.multiplication.service.strategies.MultiplicationStrate
 import org.springframework.stereotype.Service;
 
 @Service
-public class DoubleMultiplicationService {
-    private final MultiplicationStrategy<Double, Double, Double> multiplicationStrategy;
-
+public class DoubleMultiplicationService extends AbstractMultiplicationService<Double, Double, Double>{
 
     public DoubleMultiplicationService(
             MultiplicationStrategy<Double, Double, Double> multiplicationStrategy) {
-        this.multiplicationStrategy = multiplicationStrategy;
+        super(multiplicationStrategy);
     }
 
-    public double multiplication(double lhs, double rhs) {
-        final double result = multiplicationStrategy.multiply(lhs, rhs);
-        return result;
-    }
 }
