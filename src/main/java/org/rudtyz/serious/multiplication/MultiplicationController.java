@@ -2,18 +2,19 @@ package org.rudtyz.serious.multiplication;
 
 import org.rudtyz.serious.multiplication.service.business.DoubleMultiplicationService;
 import org.rudtyz.serious.multiplication.service.business.IntegerMultiplicationService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MultiplicationController {
 
-    @Autowired
-    private IntegerMultiplicationService integerMultiplicationService;
+    private final IntegerMultiplicationService integerMultiplicationService;
+    private final DoubleMultiplicationService doubleMultiplicationService;
 
-    @Autowired
-    private DoubleMultiplicationService doubleMultiplicationService;
+    public MultiplicationController(IntegerMultiplicationService integerMultiplicationService, DoubleMultiplicationService doubleMultiplicationService) {
+        this.integerMultiplicationService = integerMultiplicationService;
+        this.doubleMultiplicationService = doubleMultiplicationService;
+    }
 
     @RequestMapping("/")
     public String index(int lhs, int rhs) {
