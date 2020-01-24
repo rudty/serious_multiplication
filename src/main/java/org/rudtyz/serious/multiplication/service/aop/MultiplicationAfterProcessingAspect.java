@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class MultiplicationProcessingAspect {
+public class MultiplicationAfterProcessingAspect {
    private final ApplicationEventPublisher multiplicationEventPublisher;
 
-   public MultiplicationProcessingAspect(
+   public MultiplicationAfterProcessingAspect(
            ApplicationEventPublisher multiplicationEventPublisher){
       this.multiplicationEventPublisher = multiplicationEventPublisher;
    }

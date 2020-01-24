@@ -8,7 +8,8 @@ public class IntegerMultiplicationStrategy implements MultiplicationStrategy<Int
 
     @Override
     public Integer multiply(Integer lhs, Integer rhs) {
-        return lhs * rhs;
+        final int result = Math.multiplyExact(lhs, rhs);
+        return result;
     }
 
 }
