@@ -16,6 +16,6 @@ public class MultiplicationEventService {
     @Async
     @EventListener
     public void onMultiplicationEventReceive(NumberMultiplicationEvent event) {
-        multiplicationPrintFacade.print(event.getLhs(), event.getRhs(), event.getResult());
+        multiplicationPrintFacade.ok(event.getLhs(), event.getRhs(), event.getResult());
     }
 }

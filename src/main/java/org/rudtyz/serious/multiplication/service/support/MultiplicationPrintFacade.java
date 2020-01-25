@@ -21,12 +21,20 @@ public class MultiplicationPrintFacade {
         this.newLinePrinter = newLinePrinterFactory.create();
     }
 
-    public void print(Number lhs, Number rhs, Number result) {
+    public void ok(Number lhs, Number rhs, Number result) {
         numberPrinter.print(lhs);
         stringPrinter.print(" * ");
         numberPrinter.print(rhs);
         stringPrinter.print(" = ");
         numberPrinter.print(result);
+        newLinePrinter.print();
+    }
+
+    public void except(Number lhs, Number rhs) {
+        stringPrinter.print("overflow ");
+        numberPrinter.print(lhs);
+        stringPrinter.print(" * ");
+        numberPrinter.print(rhs);
         newLinePrinter.print();
     }
 }
