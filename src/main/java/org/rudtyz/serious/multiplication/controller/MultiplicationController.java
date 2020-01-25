@@ -1,4 +1,4 @@
-package org.rudtyz.serious.multiplication;
+package org.rudtyz.serious.multiplication.controller;
 
 import org.rudtyz.serious.multiplication.service.business.DoubleMultiplicationService;
 import org.rudtyz.serious.multiplication.service.business.IntegerMultiplicationService;

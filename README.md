@@ -18,7 +18,7 @@ Number 를 반환하고 두개의 곱을 제네릭으로 만들 수 있는 [인�
 - [double](https://github.com/rudty/serious_multiplication/blob/master/src/main/java/org/rudtyz/serious/multiplication/service/business/DoubleMultiplicationService.java)
 
 ### Printer
-1. 화면에 출력(로그 용도)은 printer 객체를 통해서 출력
+1. 화면에 출력(로그 용도)은 [printer 클래스](https://github.com/rudty/serious_multiplication/tree/master/src/main/java/org/rudtyz/serious/multiplication/printer)를 통해서 출력
 2. string printer, number printer, newline printer 가 있다
 3. `2 * 2 = 4` 를 곱셈 연산후 출력 방법은 다음과 같다
 ```
@@ -31,19 +31,19 @@ newline 출력
 ```
 
 ### Printer Factory
-1. printer 객체는 factory 클래스를 통해서 제작
-2. 각 printer 별로 factory 클래스가 있다
+1. printer 객체는 [factory 클래스](https://github.com/rudty/serious_multiplication/tree/master/src/main/java/org/rudtyz/serious/multiplication/factory)를 통해서 제작
+2. 각 printer 별로 [factory 클래스](https://github.com/rudty/serious_multiplication/tree/master/src/main/java/org/rudtyz/serious/multiplication/factory)가 있다
 
 ### Print Facade 
 printer 는 자료형별로 동작하고 있어 한번의 연산마다 한번의 호출로 동작할 수 있게 하는 
 [facade 클래스](https://github.com/rudty/serious_multiplication/blob/master/src/main/java/org/rudtyz/serious/multiplication/service/support/MultiplicationPrintFacade.java) 제작
 
-### aop
+### AOP
 1. 예외
  - 오버플로우 발생 시 로그를 남기고 다시 에러를 던지도록 하는 [클래스](https://github.com/rudty/serious_multiplication/blob/master/src/main/java/org/rudtyz/serious/multiplication/service/aop/MultiplicationExceptionProcessingAspect.java) 제작
 2. 출력
  - 서비스 동작 실행 시 printer 클래스 동작을 수행하도록 하는 [클래스](https://github.com/rudty/serious_multiplication/blob/master/src/main/java/org/rudtyz/serious/multiplication/service/aop/MultiplicationAfterProcessingAspect.java) 제작 
  
-### event 
+### Event 
 aop 에서 [로그 이벤트 서비스](https://github.com/rudty/serious_multiplication/blob/master/src/main/java/org/rudtyz/serious/multiplication/service/support/MultiplicationEventService.java)로 동작을 연결하기 위해서 [이벤트](https://github.com/rudty/serious_multiplication/blob/master/src/main/java/org/rudtyz/serious/multiplication/service/support/MultiplicationEvent.java)로 전달  
 
