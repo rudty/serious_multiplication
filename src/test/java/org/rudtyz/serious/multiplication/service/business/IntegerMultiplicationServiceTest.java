@@ -29,4 +29,11 @@ public class IntegerMultiplicationServiceTest {
         assertThat(result).isEqualTo(121);
         assertThat(output.getOut()).contains("11 * 11 = 121\n");
     }
+
+    @Test
+    void testMultiplicationOverflow_MAX_MAX(CapturedOutput output) {
+        Number result = multiplicationService.multiplication(Integer.MAX_VALUE, Integer.MAX_VALUE);
+        assertThat(result).isEqualTo(0);
+        assertThat(output.getOut()).contains("2147483647 * 2147483647 = 0\n");
+    }
 }
