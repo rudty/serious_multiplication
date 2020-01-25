@@ -1,5 +1,6 @@
 package org.rudtyz.serious.multiplication.service.business;
 
-public interface MultiplicationService<E extends Number, L extends Number, R extends Number> {
-    E multiplication(L lhs, R rhs);
+import org.rudtyz.serious.multiplication.service.Multiplication;
+
+public interface MultiplicationService<L extends Number, R extends Number> extends Multiplication<L, R> {
 }

@@ -1,5 +1,6 @@
 package org.rudtyz.serious.multiplication.service.strategies;
 
-public interface MultiplicationStrategy<R, A1, A2> {
-    R multiply(A1 lhs, A2 rhs);
+import org.rudtyz.serious.multiplication.service.Multiplication;
+
+public interface MultiplicationStrategy<L extends Number, R extends Number> extends Multiplication<L, R> {
 }
