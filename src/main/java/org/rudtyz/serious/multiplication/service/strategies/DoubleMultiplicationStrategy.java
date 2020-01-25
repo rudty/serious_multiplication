@@ -7,7 +7,10 @@ public class DoubleMultiplicationStrategy implements MultiplicationStrategy<Doub
 
     @Override
     public Double multiplication(Double lhs, Double rhs) {
-        return lhs * rhs;
+        double result = lhs * rhs;
+        if (Double.isInfinite(result) || Double.isNaN(result)) {
+            throw new ArithmeticException("double overflow");
+        }
+        return result;
     }
-
 }

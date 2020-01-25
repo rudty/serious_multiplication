@@ -23,4 +23,10 @@ public class DoubleMultiplicationServiceTest {
         assertThat(output.getOut()).contains("2.1 * 2.1 = 4.41\n");
     }
 
+    @Test
+    void testMultiplicationOverflow_MAX_MAX(CapturedOutput output) {
+        Number result = multiplicationService.multiplication(Double.MAX_VALUE, Double.MAX_VALUE);
+        assertThat(result).isEqualTo(0);
+        assertThat(output.getOut()).contains(Double.MAX_VALUE + " * " + Double.MAX_VALUE + " = 0\n");
+    }
 }
