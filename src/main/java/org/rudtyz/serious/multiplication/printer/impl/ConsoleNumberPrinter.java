@@ -1,6 +1,6 @@
-package org.rudtyz.serious.multiplication.factory.impl;
+package org.rudtyz.serious.multiplication.printer.impl;
 
-import org.rudtyz.serious.multiplication.factory.NumberPrinter;
+import org.rudtyz.serious.multiplication.printer.NumberPrinter;
 
 public class ConsoleNumberPrinter implements NumberPrinter {
     @Override

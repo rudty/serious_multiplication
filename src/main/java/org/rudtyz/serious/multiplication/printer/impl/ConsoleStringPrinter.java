@@ -1,6 +1,6 @@
-package org.rudtyz.serious.multiplication.factory.impl;
+package org.rudtyz.serious.multiplication.printer.impl;
 
-import org.rudtyz.serious.multiplication.factory.StringPrinter;
+import org.rudtyz.serious.multiplication.printer.StringPrinter;
 
 public class ConsoleStringPrinter implements StringPrinter {
     @Override

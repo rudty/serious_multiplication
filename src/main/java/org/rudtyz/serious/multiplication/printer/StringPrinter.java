@@ -1,4 +1,4 @@
-package org.rudtyz.serious.multiplication.factory;
+package org.rudtyz.serious.multiplication.printer;
 
 public interface StringPrinter extends Printer<String> {
 }

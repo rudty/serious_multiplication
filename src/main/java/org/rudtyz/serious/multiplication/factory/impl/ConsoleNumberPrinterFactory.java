@@ -1,7 +1,8 @@
 package org.rudtyz.serious.multiplication.factory.impl;
 
-import org.rudtyz.serious.multiplication.factory.NumberPrinter;
+import org.rudtyz.serious.multiplication.printer.NumberPrinter;
 import org.rudtyz.serious.multiplication.factory.NumberPrinterFactory;
+import org.rudtyz.serious.multiplication.printer.impl.ConsoleNumberPrinter;
 import org.springframework.stereotype.Component;
 
 @Component

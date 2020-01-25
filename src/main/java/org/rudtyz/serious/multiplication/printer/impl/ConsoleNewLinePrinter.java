@@ -1,6 +1,6 @@
-package org.rudtyz.serious.multiplication.factory.impl;
+package org.rudtyz.serious.multiplication.printer.impl;
 
-import org.rudtyz.serious.multiplication.factory.NewLinePrinter;
+import org.rudtyz.serious.multiplication.printer.NewLinePrinter;
 
 public class ConsoleNewLinePrinter implements NewLinePrinter {
     @Override
