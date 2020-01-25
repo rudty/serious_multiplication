@@ -47,3 +47,6 @@ printer 는 자료형별로 동작하고 있어 한번의 연산마다 한번의
 ### Event 
 aop 에서 [로그 이벤트 서비스](https://github.com/rudty/serious_multiplication/blob/master/src/main/java/org/rudtyz/serious/multiplication/service/support/MultiplicationEventService.java)로 동작을 연결하기 위해서 [이벤트](https://github.com/rudty/serious_multiplication/blob/master/src/main/java/org/rudtyz/serious/multiplication/service/support/MultiplicationEvent.java)로 전달  
 
+### 기타 
+1. Thead.sleep 
+ - 현재 다른 스레드에서 Printer 가 동작을 하고 있어 출력을 기다릴때까지 1초간 휴식 이후 복잡한 동작 시에는 다른 라이브러리를 사용하여 기다려야 한다  
